@@ -7,3 +7,9 @@ export interface UserFields {
     googleId: string;
     avatar: string;
 }
+
+export interface IPhoto {
+    user: string
+    title: string;
+    image: string | null;
+}
