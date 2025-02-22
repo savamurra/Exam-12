@@ -20,7 +20,7 @@ photoRouter.get("/", async (req, res, next) => {
                 res.status(200).send(result);
             }
         } else {
-            const result = await Photo.find();
+            const result = await Photo.find().populate("user", "-_id displayName");
             if (result.length === 0) {
                 res.status(404).send({error: "No photo found"});
             } else {
