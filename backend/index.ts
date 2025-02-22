@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 import userRouter from "./routers/users";
 import mongoDb from "./mongoDb";
-import {photoRouter} from "./routers/photos";
+import { photoRouter } from "./routers/photos";
 
 const cors = require("cors");
 
@@ -15,18 +15,18 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/users", userRouter);
-app.use('/photo', photoRouter);
+app.use("/photo", photoRouter);
 
 const run = async () => {
-    await mongoose.connect("mongodb://localhost/exam-12");
+  await mongoose.connect("mongodb://localhost/exam-12");
 
-    app.listen(port, () => {
-        console.log(`Server started on port http://localhost:${port}`);
-    });
+  app.listen(port, () => {
+    console.log(`Server started on port http://localhost:${port}`);
+  });
 
-    process.on("exit", () => {
-        mongoDb.disconnect();
-    });
+  process.on("exit", () => {
+    mongoDb.disconnect();
+  });
 };
 
 run().catch((err) => console.log(err));

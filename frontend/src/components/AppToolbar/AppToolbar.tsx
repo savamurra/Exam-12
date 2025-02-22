@@ -33,9 +33,7 @@ const AppToolbar = () => {
         }}
       >
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/">
-            Photo Gallery
-          </Link>
+          <Link to="/">Photo Gallery</Link>
         </Typography>
         {user ? <UserMenu user={user} /> : <AnonymousMenu />}
       </Toolbar>

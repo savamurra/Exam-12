@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../app/hooks.ts";
 import { logout } from "../../features/users/userThunks.ts";
 import { unsetUser } from "../../features/users/userSlice.ts";
 import { apiUrl } from "../../globalConstants.ts";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   user: User;
@@ -17,7 +17,6 @@ const UserMenu: React.FC<Props> = ({ user }) => {
     dispatch(logout());
     dispatch(unsetUser());
   };
-
 
   const updateAvatar = { ...user };
   const image = user.avatar;
@@ -32,15 +31,18 @@ const UserMenu: React.FC<Props> = ({ user }) => {
   }
   return (
     <>
-      <Link to={`/users-photo/${user._id}`}  style={{
-        textDecoration: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        color: "inherit",
-        textTransform: 'uppercase',
-        fontSize: '13px',
-        marginRight: '10px',
-      }}>
+      <Link
+        to={`/users-photo/${user._id}`}
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          color: "inherit",
+          textTransform: "uppercase",
+          fontSize: "13px",
+          marginRight: "10px",
+        }}
+      >
         Hello, {user.displayName}!
         <CardMedia
           component="img"
@@ -50,7 +52,9 @@ const UserMenu: React.FC<Props> = ({ user }) => {
         />
       </Link>
 
-      <Button onClick={handleLogout} color='inherit'>Logout</Button>
+      <Button onClick={handleLogout} color="inherit">
+        Logout
+      </Button>
     </>
   );
 };

@@ -4,7 +4,7 @@ import User from "../models/User";
 import auth, { RequestWithUser } from "../middleware/auth";
 import { OAuth2Client } from "google-auth-library";
 import config from "../config";
-import {imagesUpload} from "../multer";
+import { imagesUpload } from "../multer";
 
 const userRouter = express.Router();
 
