@@ -49,3 +49,8 @@ export interface IPhoto {
     title: string;
     image: File | null;
 }
+
+export interface PhotoMutation {
+    title: string
+    image: File | null,
+}
